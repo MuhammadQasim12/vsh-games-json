@@ -3,12 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Games Arcade - 34K Games - GitHub Pages</title>
+<title>VSH Arcade - 34K Games</title>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Plus Jakarta Sans',sans-serif;background:#0f172a;color:#fff;min-height:100vh}
-a{text-decoration:none!important;color:inherit}
 .header{position:sticky;top:0;z-index:50;background:rgba(15,23,42,.9);backdrop-filter:blur(12px);border-bottom:1px solid #1e293b;padding:0 16px;height:58px;display:flex;align-items:center;justify-content:space-between}
 .logo{font-weight:800;font-size:16px;display:flex;gap:8px;align-items:center}
 .logo-mark{width:32px;height:32px;background:#4f46e5;border-radius:8px;display:grid;place-items:center}
@@ -16,22 +15,20 @@ a{text-decoration:none!important;color:inherit}
 .hero{max-width:700px;margin:0 auto;padding:24px 16px 16px;text-align:center}
 .hero h1{font-size:clamp(28px,5vw,40px);font-weight:800;letter-spacing:-.02em;line-height:.95;margin-bottom:8px}
 .hero h1 span{background:linear-gradient(90deg,#4f46e5,#7c3aed,#ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.hero p{color:#94a3b8;font-size:13px}
+.hero p{color:#94a3b8;font-size:13px;word-break:break-all}
 .search-wrap{max-width:560px;margin:12px auto;position:sticky;top:58px;z-index:40;background:rgba(15,23,42,.9);backdrop-filter:blur(10px);padding:10px 16px}
 .search-inner{position:relative}
 .search-inner input{width:100%;height:48px;padding:0 44px 0 42px;border-radius:12px;border:1px solid #1e293b;background:#1e293b;color:#fff;font-size:14px;outline:none}
-.search-inner input::placeholder{color:#64748b}
 .search-icon{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:#64748b}
 .clear-btn{position:absolute;right:8px;top:50%;transform:translateY(-50%);width:28px;height:28px;border-radius:50%;background:#0f172a;display:none;place-items:center;color:#94a3b8;border:0;cursor:pointer}
 .clear-btn.show{display:grid}
 .main{max-width:1280px;margin:0 auto;padding:12px 16px 24px}
 .grid-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
-.grid-head h2{font-size:13px;font-weight:800}
 .count{font-size:11px;padding:4px 10px;border-radius:999px;background:#4f46e5;color:#fff;font-weight:800}
 .games-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px}
 @media(max-width:600px){.games-grid{grid-template-columns:repeat(2,1fr)}}
 .g-card{background:#1e293b;border:1px solid #334155;border-radius:14px;overflow:hidden;cursor:pointer;transition:.2s}
-.g-card:hover{transform:translateY(-3px);border-color:#4f46e5;box-shadow:0 10px 24px -12px rgba(79,70,229,.5)}
+.g-card:hover{transform:translateY(-3px);border-color:#4f46e5}
 .g-thumb{height:130px;background:#0f172a;position:relative;overflow:hidden}
 .g-thumb img{width:100%;height:100%;object-fit:cover}
 .g-badge{position:absolute;top:8px;left:8px;padding:3px 8px;border-radius:6px;background:rgba(0,0,0,.6);backdrop-filter:blur(4px);font-size:10px;font-weight:800;color:#fff}
@@ -44,43 +41,39 @@ a{text-decoration:none!important;color:inherit}
 .iframe-box{background:#000;aspect-ratio:16/9}
 .iframe-box iframe{width:100%;height:100%;border:0}
 .close-btn{background:#0f172a;width:30px;height:30px;border-radius:8px;display:grid;place-items:center;border:0;cursor:pointer;color:#fff}
-.skeleton{height:130px;background:linear-gradient(90deg,#1e293b 25%,#334155 50%,#1e293b 75%);background-size:200% 100%;animation:shim 1.2s infinite}
-@keyframes shim{0%{background-position:-200% 0}100%{background-position:200% 0}}
 .footer{text-align:center;padding:20px;color:#475569;font-size:11px;border-top:1px solid #1e293b;margin-top:20px}
 .ad-box{background:#1e293b;border:1px solid #334155;border-radius:10px;min-height:90px;display:flex;align-items:center;justify-content:center;margin:14px auto;max-width:728px;overflow:hidden}
+.debug{max-width:1280px;margin:10px auto;background:#1e293b;border:1px solid #334155;border-radius:10px;padding:12px;font-size:11px;color:#94a3b8;white-space:pre-wrap;word-break:break-all}
 </style>
 </head>
 <body>
 <header class="header">
   <div class="logo"><div class="logo-mark">🎮</div> VSH Arcade</div>
-  <div class="badge" id="topBadge">GitHub Pages • Fast</div>
+  <div class="badge" id="topBadge">Loading...</div>
 </header>
 <section class="hero">
   <h1>34K <span>Games Arcade</span></h1>
-  <p id="heroSub">Loading games from games.json...</p>
+  <p id="heroSub">Checking games.json...</p>
 </section>
-
-<!-- TOP AD - 4:1 Native - You can keep or remove -->
+<div id="debug" class="debug" style="display:none"></div>
 <div class="ad-box" id="adTop">
   <script async="async" data-cfasync="false" src="https://mittengulped.com/0a7245dd04fcd3b125e3c35eaef379dd/invoke.js"></script>
   <div id="container-0a7245dd04fcd3b125e3c35eaef379dd"></div>
 </div>
-
 <div class="search-wrap">
   <div class="search-inner">
     <span class="search-icon">🔍</span>
-    <input type="text" id="searchInput" placeholder="Search 34K games - Drift, Car, Bike...">
+    <input type="text" id="searchInput" placeholder="Search - Drift, Car, Bike...">
     <button class="clear-btn" id="clearBtn">✕</button>
   </div>
 </div>
-
 <main class="main">
   <div class="grid-head">
     <h2>🎯 Games</h2>
     <span class="count" id="countBadge">Loading...</span>
   </div>
   <div id="playerWrap" class="player-wrap">
-    <div class="player-head"><div><b id="playingTitle">Game</b> <small style="color:#94a3b8"> • GitHub Pages</small></div><button class="close-btn" onclick="closePlayer()">✕</button></div>
+    <div class="player-head"><div><b id="playingTitle">Game</b></div><button class="close-btn" onclick="closePlayer()">✕</button></div>
     <div class="iframe-box"><iframe id="gameIframe" src="" allowfullscreen></iframe></div>
   </div>
   <div class="games-grid" id="gamesGrid"></div>
@@ -90,8 +83,6 @@ a{text-decoration:none!important;color:inherit}
     <p style="color:#94a3b8;font-size:13px">Try different keywords</p>
   </div>
 </main>
-
-<!-- BOTTOM AD - 728x90 - As you wanted -->
 <div class="ad-box" id="adBottom">
   <script>
     atOptions = {
@@ -104,53 +95,117 @@ a{text-decoration:none!important;color:inherit}
   </script>
   <script src="https://mittengulped.com/929af4020bd833c5ae192f19ecc512cb/invoke.js"></script>
 </div>
-
-<footer class="footer">Hosted on GitHub Pages • vsh-games-json • Fetches from games.json in same repo • Fast, no domain needed</footer>
-
+<footer class="footer">Hosted on GitHub Pages • Fast • No domain needed</footer>
 <script>
-// This page fetches games.json from SAME repo - GitHub Pages hosting
-// File structure: index.html and games.json in same folder (root of main branch)
-
 let ALL_GAMES = [];
 let q = '';
 const grid = document.getElementById('gamesGrid');
 const badge = document.getElementById('countBadge');
 const heroSub = document.getElementById('heroSub');
+const topBadge = document.getElementById('topBadge');
+const debug = document.getElementById('debug');
 const inp = document.getElementById('searchInput');
 const clearBtn = document.getElementById('clearBtn');
 const notFound = document.getElementById('notFound');
-
+function showDebug(msg) {
+  debug.style.display = 'block';
+  debug.textContent += msg + '\n';
+}
 async function loadGames() {
-  // Try same-folder JSON first (GitHub Pages)
-  const urls = ['./games.json', './games-1645.json', 'games.json'];
+  showDebug('Starting load...');
+  const urls = [
+    './games.json',
+    'games.json',
+    './games-1645.json'
+  ];
+  
   for (let url of urls) {
     try {
-      const res = await fetch(url + '?v=' + Date.now(), {cache: 'no-store'});
-      if (!res.ok) throw new Error(res.status);
-      const data = await res.json();
-      if (Array.isArray(data) && data.length > 0) {
-        ALL_GAMES = data.map((g,i) => ({
+      showDebug(`Trying ${url}...`);
+      const res = await fetch(url + '?t=' + Date.now(), {cache: 'no-store'});
+      showDebug(`Response ${url}: ${res.status} ${res.statusText}`);
+      if (!res.ok) {
+        showDebug(`Failed ${url} - ${res.status}`);
+        continue;
+      }
+      const text = await res.text();
+      showDebug(`Got ${text.length} chars from ${url}`);
+      showDebug(`First 200 chars: ${text.substring(0,200)}`);
+      
+      let data;
+      try {
+        data = JSON.parse(text);
+      } catch(e) {
+        showDebug(`JSON parse error ${url}: ${e.message}`);
+        continue;
+      }
+      
+      showDebug(`Parsed JSON, type: ${Array.isArray(data) ? 'array' : typeof data}, length: ${Array.isArray(data) ? data.length : 'N/A'}`);
+      
+      if (!Array.isArray(data)) {
+        // Maybe object with games key?
+        if (data.games && Array.isArray(data.games)) {
+          showDebug('Found data.games array');
+          data = data.games;
+        } else {
+          showDebug(`Data is not array, keys: ${Object.keys(data).slice(0,10)}`);
+          continue;
+        }
+      }
+      
+      if (data.length === 0) {
+        showDebug('Array empty');
+        continue;
+      }
+      
+      showDebug(`First item keys: ${Object.keys(data[0])}`);
+      showDebug(`First item: ${JSON.stringify(data[0]).substring(0,300)}`);
+      
+      // Super flexible mapping - handles any PlayGama format
+      ALL_GAMES = data.map((g,i) => {
+        // Find thumbnail - try many possible keys
+        const thumb = g.thumbnail || g.image || g.thumb || g.img || g.cover || g.icon || g.banner || g.screenshot || g.preview || '';
+        // Find iframe - try many possible keys
+        const iframe = g.iframe_url || g.iframe || g.url || g.link || g.game_url || g.embed || g.src || g.gameUrl || '';
+        // Find title
+        const title = g.title || g.name || g.game_title || g.label || `Game ${i+1}`;
+        // Find category
+        const cat = g.category || g.genre || g.type || 'Arcade';
+        
+        return {
           id: g.id || i,
-          title: g.title || g.name || `Game ${i+1}`,
-          category: g.category || g.genre || 'Arcade',
-          thumbnail: g.thumbnail || g.image || g.thumb || g.icon || '',
-          iframe_url: g.iframe_url || g.iframe || g.url || g.link || g.game_url || '',
+          title: String(title),
+          category: String(cat),
+          thumbnail: String(thumb),
+          iframe_url: String(iframe),
           rating: g.rating || (4 + Math.random()).toFixed(1)
-        })).filter(g => g.thumbnail || g.iframe_url); // keep only with image or iframe
-        heroSub.textContent = `Loaded ${ALL_GAMES.length} games from ${url} • GitHub Pages • Fast`;
+        };
+      }).filter(g => {
+        // Keep if has title and (thumbnail or iframe)
+        return g.title && (g.thumbnail || g.iframe_url);
+      });
+      
+      showDebug(`Mapped ${ALL_GAMES.length} valid games`);
+      
+      if (ALL_GAMES.length > 0) {
+        heroSub.textContent = `Loaded ${ALL_GAMES.length} games from ${url} • GitHub Pages`;
+        topBadge.textContent = `${ALL_GAMES.length} Games • Live`;
         badge.textContent = `${ALL_GAMES.length} Games`;
+        debug.style.display = 'none'; // hide debug on success
         render();
-        console.log(`Loaded ${ALL_GAMES.length} from ${url}`);
         return;
       }
+      
     } catch(e) {
-      console.warn('Failed', url, e.message);
+      showDebug(`Error ${url}: ${e.message} ${e.stack}`);
     }
   }
-  heroSub.textContent = 'Failed to load games.json - check file in repo root';
+  
+  heroSub.textContent = 'Failed to load - see debug below - check games.json format';
   badge.textContent = '0 Games';
+  showDebug('--- ALL URLS FAILED ---');
+  showDebug('Make sure games.json is in repo root and is valid JSON array');
 }
-
 function render() {
   const qq = q.toLowerCase();
   let list = ALL_GAMES.filter(g => !qq || g.title.toLowerCase().includes(qq));
@@ -161,13 +216,13 @@ function render() {
     return;
   }
   notFound.style.display = 'none';
-  // Show first 200 for speed, user can search for more
-  list.slice(0, 200).forEach(g => {
+  list.slice(0, 300).forEach(g => {
     const el = document.createElement('div');
     el.className = 'g-card';
+    const imgSrc = g.thumbnail || 'https://placehold.co/400x300/1e293b/4f46e5?text=' + encodeURIComponent(g.title);
     el.innerHTML = `
       <div class="g-thumb">
-        <img src="${g.thumbnail}" alt="${g.title}" loading="lazy" onerror="this.src='https://placehold.co/400x300/1e293b/4f46e5?text=${encodeURIComponent(g.title)}'">
+        <img src="${imgSrc}" alt="${g.title}" loading="lazy" onerror="this.src='https://placehold.co/400x300/1e293b/4f46e5?text=${encodeURIComponent(g.title)}'">
         <span class="g-badge">${g.category}</span>
       </div>
       <div class="g-body">
@@ -177,7 +232,10 @@ function render() {
       </div>
     `;
     el.onclick = () => {
-      if (!g.iframe_url) return;
+      if (!g.iframe_url) {
+        alert('No iframe URL for this game');
+        return;
+      }
       document.getElementById('playerWrap').style.display = 'block';
       document.getElementById('playingTitle').textContent = g.title;
       document.getElementById('gameIframe').src = g.iframe_url;
@@ -185,31 +243,17 @@ function render() {
     };
     grid.appendChild(el);
   });
-  if (list.length > 200) {
-    const more = document.createElement('div');
-    more.style.gridColumn = '1/-1';
-    more.style.textAlign = 'center';
-    more.style.padding = '16px';
-    more.style.color = '#94a3b8';
-    more.style.fontSize = '12px';
-    more.textContent = `Showing 200 of ${list.length} games - search to filter`;
-    grid.appendChild(more);
-  }
 }
-
 function closePlayer() {
   document.getElementById('playerWrap').style.display = 'none';
   document.getElementById('gameIframe').src = '';
 }
-
 inp.addEventListener('input', e => {
   q = e.target.value.trim();
   clearBtn.classList.toggle('show', q.length > 0);
   render();
 });
 clearBtn.onclick = () => { inp.value = ''; q = ''; clearBtn.classList.remove('show'); render(); };
-
-// Load on start
 loadGames();
 </script>
 </body>
