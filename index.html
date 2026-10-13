@@ -58,12 +58,10 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:#0f172a;color:#fff;mi
   <p id="heroSub">Loading 34K games in parts... GitHub fast, unblocked</p>
   <div class="progress"><div class="progress-bar" id="progressBar"></div></div>
 </section>
-
 <div class="ad-box" id="adTop">
   <script async="async" data-cfasync="false" src="https://mittengulped.com/0a7245dd04fcd3b125e3c35eaef379dd/invoke.js"></script>
   <div id="container-0a7245dd04fcd3b125e3c35eaef379dd"></div>
 </div>
-
 <div class="search-wrap">
   <div class="search-inner">
     <span class="search-icon">🔍</span>
@@ -71,7 +69,6 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:#0f172a;color:#fff;mi
     <button class="clear-btn" id="clearBtn">✕</button>
   </div>
 </div>
-
 <main class="main">
   <div class="grid-head">
     <h2>🎯 Games</h2>
@@ -87,7 +84,6 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:#0f172a;color:#fff;mi
     <h3 style="margin:8px 0">No games found</h3>
   </div>
 </main>
-
 <div class="ad-box" id="adBottom">
   <script>
     atOptions = {
@@ -100,14 +96,11 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:#0f172a;color:#fff;mi
   </script>
   <script src="https://mittengulped.com/929af4020bd833c5ae192f19ecc512cb/invoke.js"></script>
 </div>
-
 <footer class="footer">34K Games • GitHub Pages • Split into small files to bypass 25MB limit • Fast & Unblocked</footer>
-
 <script>
 // CONFIG: How many parts you split into
 const TOTAL_PARTS = 34; // if 34K / 1000 = 34 parts
 // If you have 2420 games now, set to 3 parts (1000 each)
-
 let ALL_GAMES = [];
 let loadedParts = 0;
 let q = '';
@@ -119,13 +112,11 @@ const progressBar = document.getElementById('progressBar');
 const inp = document.getElementById('searchInput');
 const clearBtn = document.getElementById('clearBtn');
 const notFound = document.getElementById('notFound');
-
 function extractIframeSrc(embedHtml) {
   if (!embedHtml) return '';
   const match = embedHtml.match(/src=['"]([^'"]+)['"]/);
   return match ? match[1] : '';
 }
-
 async function loadPart(partNum) {
   const urls = [
     `./games-part-${partNum}.json`,
@@ -156,7 +147,6 @@ async function loadPart(partNum) {
   }
   return [];
 }
-
 async function loadAll() {
   // First try to detect how many parts exist via manifest.json
   let partsList = [];
@@ -242,7 +232,6 @@ async function loadAll() {
   }
   render();
 }
-
 function render() {
   const qq = q.toLowerCase();
   let list = ALL_GAMES.filter(g => !qq || g.title.toLowerCase().includes(qq) || g.category.toLowerCase().includes(qq) || g.slug.toLowerCase().includes(qq));
@@ -267,11 +256,9 @@ function render() {
     grid.appendChild(el);
   });
 }
-
 function closePlayer(){document.getElementById('playerWrap').style.display='none';document.getElementById('gameIframe').src='';}
 inp.addEventListener('input', e=>{q=e.target.value.trim();clearBtn.classList.toggle('show', q.length>0);render();});
 clearBtn.onclick=()=>{inp.value='';q='';clearBtn.classList.remove('show');render();};
-
 loadAll();
 </script>
 </body>
