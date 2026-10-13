@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://arcade.virtualstudyhub.site/sitemap.xml
+Sitemap: https://arcade.virtualstudyhub.site/sitemap-main.xml
+Sitemap: https://arcade.virtualstudyhub.site/sitemap-games-1.xml
+Sitemap: https://arcade.virtualstudyhub.site/sitemap-games-2.xml
+
+Host: https://arcade.virtualstudyhub.site/
